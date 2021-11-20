@@ -164,3 +164,6 @@ for (let btn of buttons) {
     btn.classList.add("unselectable")
     btn.innerHTML = btn.id.toUpperCase()
  }
+
+ const controls = document.findElementById("controls")
+ controls.classList.add("unselectable")
