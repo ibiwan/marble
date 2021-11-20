@@ -139,7 +139,6 @@ const onTouchStart = (evt) => {
 }
 const onTouchEnd = () => {
     if(holding_button){
-        console.log({holding_button})
         holding_button.classList.remove("highlighted")
         holding_button = null
     }
@@ -156,14 +155,17 @@ const buttons = document.getElementsByClassName("button")
 for (let btn of buttons) { 
     btn.onmousedown = onTouchStart
     btn.onmousein = onTouchStart
+    btn.ontouchstart = onTouchStart
 
     btn.onmouseleave = onTouchEnd
     btn.onmouseout = onTouchEnd
     btn.onmouseup = onTouchEnd
+    btn.ontouchend=onTouchEnd
+    btn.ontouchcancel = onTouchEnd
 
     btn.classList.add("unselectable")
     btn.innerHTML = btn.id.toUpperCase()
  }
 
- const controls = document.findElementById("controls")
+ const controls = document.getElementById("controls")
  controls.classList.add("unselectable")
